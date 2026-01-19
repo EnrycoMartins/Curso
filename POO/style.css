@@ -1,0 +1,78 @@
+body {
+    font-family: 'Courier New', Courier, monospace; /* Fonte monoespaçada pra parecer digital */
+    background-color: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.maquina {
+    background-color: #333;
+    color: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    width: 300px;
+    text-align: center;
+    border: 5px solid #555;
+}
+
+.tabela-precos {
+    background-color: #444;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    font-size: 0.9em;
+}
+
+.tabela-precos p {
+    margin: 5px 0;
+    color: #ffd700; /* Amarelo tipo moeda */
+}
+
+input {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    text-align: center;
+}
+
+button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+.resultado {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #222;
+    border: 2px solid #00ff00;
+    color: #00ff00;
+    border-radius: 5px;
+}
+
+.hidden {
+    display: none;
+}
+
+.erro {
+    border-color: red;
+    color: red;
+}
