@@ -3,13 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gerenciador de Clientes - CrudCrud</title>
+    <title>Gerenciador Modular</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
     <div class="container">
-        <h1>Cadastro de Clientes</h1>
+        <h1>Cadastro Modular (POO + Funcional)</h1>
         
         <form id="form-cliente">
             <input type="text" id="nome" placeholder="Nome do Cliente" required>
@@ -19,11 +18,14 @@
 
         <hr>
 
-        <h2>Lista de Clientes</h2>
+        <div class="stats">
+            <span id="contador-clientes">Total: 0 clientes</span>
+        </div>
+
         <ul id="lista-clientes">
             </ul>
     </div>
 
-    <script src="script.js"></script>
+    <script type="module" src="./js/app.js"></script>
 </body>
 </html>
