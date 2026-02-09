@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agência Criativa Web - Design Digital</title>
+    <link rel="stylesheet" href="estilos.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="header-principal">
+        <div class="container">
+            <div class="logo">
+                <h1>Criativa<span>Web</span>.</h1>
+            </div>
+            <nav class="menu-navegacao">
+                <input type="checkbox" id="menu-toggle">
+                <label for="menu-toggle" class="menu-icon">&#9776;</label>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#sobre">Sobre Nós</a></li>
+                    <li><a href="#servicos">Serviços</a></li>
+                    <li><a href="#depoimentos">Depoimentos</a></li>
+                    <li><a href="#contato" class="btn-contato">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h2>Transformamos ideias em <br>experiências digitais.</h2>
+            <p>Design inovador, desenvolvimento web e estratégias que conectam.</p>
+            <a href="#servicos" class="btn-cta">Nossos Serviços</a>
+        </div>
+    </section>
+
+    <section id="sobre" class="secao">
+        <div class="container sobre-grid">
+            <div class="texto-sobre">
+                <h3>Sobre a Agência</h3>
+                <p>Somos apaixonados por tecnologia e design. A Agência Criativa Web nasceu com o propósito de ajudar marcas a se posicionarem no mundo digital com autenticidade.</p>
+                <p><strong>Nossos Valores:</strong> Inovação, Transparência e Foco no Usuário.</p>
+            </div>
+            <div class="img-sobre">
+                <img src="https://placehold.co/600x400" 
+                     srcset="https://placehold.co/400x300 480w, https://placehold.co/800x600 800w" 
+                     sizes="(max-width: 600px) 100vw, 50vw" 
+                     alt="Equipe trabalhando em escritório moderno">
+            </div>
+        </div>
+    </section>
+
+    <section id="servicos" class="secao bg-light">
+        <div class="container">
+            <h3 class="titulo-centro">O que fazemos</h3>
+            <div class="grid-servicos">
+                <div class="card">
+                    <h4>Design Gráfico</h4>
+                    <p>Identidade visual completa, logotipos e materiais para redes sociais.</p>
+                </div>
+                <div class="card">
+                    <h4>Desenvolvimento Web</h4>
+                    <p>Sites responsivos, landing pages e sistemas otimizados.</p>
+                </div>
+                <div class="card">
+                    <h4>Branding</h4>
+                    <p>Estratégia de marca para posicionar sua empresa no mercado.</p>
+                </div>
+                <div class="card">
+                    <h4>SEO & Marketing</h4>
+                    <p>Otimização para buscadores e campanhas de alta conversão.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="depoimentos" class="secao">
+        <div class="container">
+            <h3 class="titulo-centro">O que dizem nossos clientes</h3>
+            <div class="flex-depoimentos">
+                <div class="depoimento">
+                    <p>"A equipe transformou totalmente nosso site. O tráfego aumentou 200% em um mês!"</p>
+                    <span>- Ana Laura, CEO da TechStart</span>
+                </div>
+                <div class="depoimento">
+                    <p>"Profissionais incríveis e design impecável. Recomendo de olhos fechados."</p>
+                    <span>- Carlos Faria, Consultor</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contato" class="secao bg-dark">
+        <div class="container">
+            <h3 class="titulo-centro text-white">Vamos conversar?</h3>
+            <div class="contato-wrapper">
+                <form action="#" class="form-contato">
+                    <input type="text" placeholder="Seu Nome" required>
+                    <input type="email" placeholder="Seu E-mail" required>
+                    <textarea placeholder="Sua Mensagem" rows="5" required></textarea>
+                    <button type="submit" class="btn-submit">Enviar Mensagem</button>
+                </form>
+                <div class="info-contato">
+                    <p>📍 Av. Paulista, 1000 - São Paulo, SP</p>
+                    <p>📞 (11) 99999-9999</p>
+                    <p>📧 contato@agenciacriativa.web</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Agência Criativa Web. Desenvolvido para fins acadêmicos.</p>
+    </footer>
+
+</body>
+</html>

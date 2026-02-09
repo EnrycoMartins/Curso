@@ -1,0 +1,263 @@
+/* --- Variáveis e Reset (Boas Práticas) --- */
+:root {
+    --cor-primaria: #6C63FF; /* Roxo moderno */
+    --cor-secundaria: #333333;
+    --cor-fundo: #f4f4f9;
+    --cor-texto: #555;
+    --cor-branco: #ffffff;
+    --espacamento-padrao: 2rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Essencial para layout */
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--cor-texto);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Unidades relativas para tipografia */
+h1, h2, h3, h4 {
+    color: var(--cor-secundaria);
+    margin-bottom: 1rem;
+}
+
+/* Utilitários */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem; /* Padding lateral em rem */
+}
+
+.secao {
+    padding: 4rem 0; /* Espaçamento vertical generoso */
+}
+
+.bg-light { background-color: var(--cor-fundo); }
+.bg-dark { background-color: var(--cor-secundaria); color: var(--cor-branco); }
+.text-white { color: var(--cor-branco); }
+.titulo-centro { text-align: center; margin-bottom: 3rem; font-size: 2rem; }
+
+/* --- Header & Navegação (Flexbox) --- */
+.header-principal {
+    background: var(--cor-branco);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: sticky; /* Menu fixo moderno */
+    top: 0;
+    z-index: 1000;
+}
+
+.header-principal .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+}
+
+.logo h1 {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.logo span { color: var(--cor-primaria); }
+
+.menu-navegacao ul {
+    list-style: none;
+    display: flex; /* Flexbox para alinhar itens do menu */
+    gap: 2rem;
+}
+
+.menu-navegacao a {
+    text-decoration: none;
+    color: var(--cor-secundaria);
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.menu-navegacao a:hover { color: var(--cor-primaria); }
+
+.btn-contato {
+    background-color: var(--cor-primaria);
+    color: var(--cor-branco) !important;
+    padding: 0.5rem 1.2rem;
+    border-radius: 20px;
+}
+
+/* Menu Hambúrguer (Escondido no Desktop) */
+#menu-toggle, .menu-icon { display: none; }
+
+/* --- Hero Section (Unidades de Viewport - vh) --- */
+.hero {
+    height: 90vh; /* 90% da altura da tela */
+    background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero h2 {
+    font-size: 3rem; /* Tamanho grande para destaque */
+    line-height: 1.2;
+}
+
+.btn-cta {
+    display: inline-block;
+    margin-top: 1.5rem;
+    padding: 1rem 2rem;
+    background-color: var(--cor-primaria);
+    color: var(--cor-branco);
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: transform 0.2s;
+}
+
+.btn-cta:hover { transform: scale(1.05); }
+
+/* --- Sobre Nós (Flexbox para layout lado a lado) --- */
+.sobre-grid {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+
+.texto-sobre, .img-sobre { flex: 1; /* Ocupam o mesmo espaço (1fr) */ }
+
+.img-sobre img {
+    width: 100%; /* Responsivo ao container */
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* --- Serviços (CSS Grid) --- */
+.grid-servicos {
+    display: grid;
+    /* O "segredo" do grid responsivo sem media queries excessivas */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.card {
+    background: var(--cor-branco);
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s;
+    border: 1px solid #eee;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: var(--cor-primaria);
+}
+
+/* --- Depoimentos (Flexbox) --- */
+.flex-depoimentos {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap; /* Permite quebra em telas menores */
+    justify-content: center;
+}
+
+.depoimento {
+    background: #fff;
+    padding: 2rem;
+    border-left: 4px solid var(--cor-primaria);
+    flex-basis: 45%; /* Tamanho base */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+/* --- Contato --- */
+.contato-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+    justify-content: space-between;
+}
+
+.form-contato {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.info-contato {
+    flex: 1;
+    color: #ccc;
+}
+
+.form-contato input, .form-contato textarea {
+    padding: 1rem;
+    border: none;
+    border-radius: 5px;
+    font-family: inherit;
+}
+
+.btn-submit {
+    padding: 1rem;
+    background-color: var(--cor-primaria);
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+footer {
+    text-align: center;
+    padding: 2rem;
+    background: #222;
+    color: #777;
+    font-size: 0.9rem;
+}
+
+/* --- RESPONSIVIDADE (Media Queries) --- */
+@media (max-width: 768px) {
+    
+    /* Menu Hambúrguer em ação */
+    .menu-icon {
+        display: block;
+        font-size: 2rem;
+        cursor: pointer;
+    }
+
+    .menu-navegacao ul {
+        display: none; /* Esconde o menu padrão */
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 70px; /* Altura do header */
+        left: 0;
+        background: var(--cor-branco);
+        text-align: center;
+        padding: 1rem 0;
+        box-shadow: 0 5px 5px rgba(0,0,0,0.1);
+    }
+
+    /* Lógica do Checkbox Hack: Se o input estiver 'checked', mostra a ul irmã */
+    #menu-toggle:checked ~ ul {
+        display: flex;
+    }
+
+    /* Ajustes de Tipografia e Layout */
+    .hero h2 { font-size: 2rem; }
+    
+    .sobre-grid {
+        flex-direction: column; /* Empilha imagem e texto */
+    }
+
+    .flex-depoimentos .depoimento {
+        flex-basis: 100%; /* Ocupa largura total */
+    }
+
+    .contato-wrapper {
+        flex-direction: column;
+    }
+}
