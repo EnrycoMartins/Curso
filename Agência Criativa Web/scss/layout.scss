@@ -1,0 +1,77 @@
+@use 'variaveis' as v;
+@use 'mixins' as m;
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+// Seções Gerais
+.section {
+  // Operador matemático: Dobro do espaçamento médio
+  padding: v.$spacing-md * 2 0; 
+
+  &--bg-light {
+    background-color: v.$color-bg-light;
+  }
+
+  &--bg-dark {
+    background-color: v.$color-secondary;
+    color: v.$color-white;
+  }
+}
+
+// Header
+.header {
+  background: v.$color-white;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+  }
+
+  &__title {
+    font-size: 1.5rem;
+    color: v.$color-secondary;
+
+    &--highlight {
+      color: v.$color-primary;
+    }
+  }
+}
+
+// Hero Section
+.hero {
+  height: 90vh;
+  background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+  @include m.flex-center; // Uso do Mixin
+  text-align: center;
+
+  &__title {
+    font-size: 3rem;
+    line-height: 1.2;
+    margin-bottom: v.$spacing-sm * 1.5; // Operador
+    color: v.$color-secondary;
+  }
+
+  @include m.respond-to-mobile {
+    &__title {
+      font-size: 2rem;
+    }
+  }
+}
+
+// Footer
+.footer {
+  text-align: center;
+  padding: v.$spacing-md;
+  background: #222;
+  color: #777;
+}

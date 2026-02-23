@@ -1,0 +1,92 @@
+@use 'variaveis' as v;
+@use 'mixins' as m;
+
+// Botões
+.btn {
+  @include m.button-base;
+
+  &--primary {
+    background-color: v.$color-primary;
+    color: v.$color-white;
+  }
+
+  &--small {
+    background-color: v.$color-primary;
+    color: v.$color-white;
+    padding: 0.5rem 1.2rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+  }
+}
+
+// Navegação (Mobile Logic)
+.nav {
+  &__list {
+    display: flex;
+    gap: v.$spacing-md;
+    align-items: center;
+
+    @include m.respond-to-mobile {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 70px;
+      left: 0;
+      width: 100%;
+      background: v.$color-white;
+      padding: v.$spacing-md 0;
+      box-shadow: 0 5px 5px rgba(0,0,0,0.1);
+    }
+  }
+
+  &__link {
+    color: v.$color-secondary;
+    font-weight: 600;
+    transition: color 0.3s;
+
+    &:hover {
+      color: v.$color-primary;
+    }
+  }
+
+  &__checkbox {
+    display: none;
+
+    // Lógica do Hamburger Menu
+    &:checked ~ .nav__list {
+      display: flex;
+    }
+  }
+
+  &__icon {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+
+    @include m.respond-to-mobile {
+      display: block;
+    }
+  }
+}
+
+// Cards
+.card {
+  background: v.$color-white;
+  padding: v.$spacing-md;
+  border-radius: 8px;
+  text-align: center;
+  border: 1px solid #eee;
+  transition: transform 0.3s;
+
+  &:hover {
+    transform: translateY(-5px);
+    border-color: v.$color-primary;
+  }
+}
+
+// Grid de Serviços
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: v.$spacing-md;
+}

@@ -1,0 +1,32 @@
+@use 'variaveis' as v;
+
+// Mixin para Media Queries
+@mixin respond-to-mobile {
+  @media (max-width: v.$breakpoint-mobile) {
+    @content;
+  }
+}
+
+// Mixin para Flexbox Centralizado
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// Mixin para estrutura de botões
+@mixin button-base {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  border-radius: 5px;
+  font-weight: 600;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s;
+
+  &:hover {
+    transform: translateY(-2px);
+    filter: brightness(0.9);
+  }
+}

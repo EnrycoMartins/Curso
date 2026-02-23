@@ -1,0 +1,28 @@
+@use 'variaveis' as v;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: v.$font-primary;
+  color: v.$color-text;
+  line-height: 1.6;
+  overflow-x: hidden;
+  font-size: v.$font-size-base;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}

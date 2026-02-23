@@ -1,0 +1,10 @@
+// Importação dos Partials
+// A ordem importa: primeiro variáveis e mixins, depois a base e layout
+@use 'variaveis';
+@use 'mixins';
+@use 'base';
+@use 'layout';
+@use 'componentes';
+
+// Comentário do aluno:
+// Note que não preciso de prefixo underscore (_) nem da extensão .scss nos @use.
