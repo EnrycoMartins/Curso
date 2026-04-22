@@ -1,0 +1,13 @@
+/* css/style.css */
+
+/* Adiciona um padding no topo para o menu não sobrepor o banner */
+body {
+    padding-top: 50px;
+}
+
+/* Configuração da imagem de fundo do Banner */
+.banner-secao {
+    /* Use uma cor escura como base e uma imagem de fundo */
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('../img/banner.jpg') center/cover no-repeat;
+    min-height: 80vh;
+}
