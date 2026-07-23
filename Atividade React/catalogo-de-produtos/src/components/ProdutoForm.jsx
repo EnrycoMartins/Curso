@@ -1,6 +1,8 @@
 import { useState } from "react";
+import { useProdutos } from "../context/ProdutosContext";
 
-export default function ProdutoForm({ onAdicionarProduto }) {
+export default function ProdutoForm() {
+  const { adicionarProduto } = useProdutos();
   const [formData, setFormData] = useState({
     nome: "",
     preco: "",
@@ -18,13 +20,13 @@ export default function ProdutoForm({ onAdicionarProduto }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
+    
     // Validação básica dos campos obrigatórios
     if (!formData.nome.trim() || !formData.preco || !formData.descricao.trim()) {
       alert("Por favor, preencha todos os campos obrigatórios!");
       return;
     }
-
+    
     const novoProduto = {
       id: Date.now(),
       nome: formData.nome,
@@ -33,8 +35,8 @@ export default function ProdutoForm({ onAdicionarProduto }) {
       imagem: formData.imagem,
     };
 
-    onAdicionarProduto(novoProduto);
-
+    adicionarProduto(novoProduto);
+    
     // Reseta o formulário
     setFormData({
       nome: "",

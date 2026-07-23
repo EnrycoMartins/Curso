@@ -1,10 +1,12 @@
-export default function ProdutoCard({ nome, preco, imagem, descricao }) {
-  // Imagem padrão caso o usuário não informe uma URL
-  const imagemPadrao = "https://via.placeholder.com/250x180?text=Sem+Imagem";
+import { memo } from "react";
+
+const ProdutoCard = memo(function ProdutoCard({ nome, preco, imagem, descricao }) {
+  const imagemPadrao = "https://placehold.co/250x180/e2e8f0/1e293b?text=Sem+Imagem"; // Imagem padrão caso o usuário não informe uma URL
+  const imagemValida = imagem && imagem.startsWith("http") ? imagem : imagemPadrao;
 
   return (
     <div className="card-produto">
-      <img src={imagem || imagemPadrao} alt={nome} className="card-img" />
+      <img src={imagemValida} alt={nome} className="card-img" />
       <div className="card-body">
         <h3>{nome}</h3>
         <p className="card-descricao">{descricao}</p>
@@ -17,4 +19,6 @@ export default function ProdutoCard({ nome, preco, imagem, descricao }) {
       </div>
     </div>
   );
-}
+});
+
+export default ProdutoCard;
