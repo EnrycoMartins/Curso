@@ -1,7 +1,6 @@
 import { memo } from 'react';
 import { useTodo } from '../context/TodoContext';
 
-// 1. Mudamos o nome da função interna para TodoItemComponent
 function TodoItemComponent({ todo }) {
   const { toggleTodo, removeTodo } = useTodo();
 
@@ -22,5 +21,4 @@ function TodoItemComponent({ todo }) {
   );
 }
 
-// 2. Agora podemos usar TodoItem tranquilamente aqui na exportação
 export const TodoItem = memo(TodoItemComponent);

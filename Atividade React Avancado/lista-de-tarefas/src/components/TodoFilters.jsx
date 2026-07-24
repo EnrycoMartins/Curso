@@ -1,6 +1,5 @@
 import { useTodo } from '../context/TodoContext';
 
-// A palavra 'export' precisa estar aqui antes de 'function'
 export function TodoFilters() {
   const { filter, setFilter, stats } = useTodo();
 
