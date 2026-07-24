@@ -39,7 +39,7 @@ Siga os passos abaixo para testar o projeto na sua máquina:
 
     git clone [https://github.com/EnrycoMartins/Curso.git](https://github.com/EnrycoMartins/Curso.git)
 
-    Abra o terminal integrado na pasta Atividade React Avancado
+*   **Abra o terminal integrado na pasta Atividade React Avancado**
 
 *   **Acesse o diretório do projeto:**
     Bash
