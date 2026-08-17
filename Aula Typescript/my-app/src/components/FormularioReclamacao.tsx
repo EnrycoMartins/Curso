@@ -1,7 +1,9 @@
 import { useState } from "react";
+import type { Reclamacao } from "../tipos/reclamacao";
+import styles from './FormularioReclamacao.module.css'
 
 type Props = {
-    aoEnviar : () => void;
+    aoEnviar : (reclamacao: Reclamacao ) => void;
 }
 
 const FormularioReclamacao = ({ aoEnviar } : Props) =>  {
@@ -11,17 +13,25 @@ const FormularioReclamacao = ({ aoEnviar } : Props) =>  {
 
     const enviar = (e: React.FormEvent) => {
         e.preventDefault();
-        aoEnviar();
+
+        if(!nome || !mensagem) return;
+        
+        aoEnviar({id: 0, nome, mensagem});
+        setNome('');
+        setMensagem('');
     }
     return(
-        <form onSubmit={enviar}>
+        <form className={styles.formulario} onSubmit={enviar}>
             <h2>Registrar Reclamação</h2>
-            <input type="text" 
+            <input 
+            className={styles.input}
+            type="text" 
             placeholder="Nome da Empresa"
             value = {nome}
             onChange = {(e) => setNome(e.target.value)}
             />
             <textarea
+                className={styles.textarea}
                 placeholder="Descreva sua reclamação"
                 value = {mensagem}
                 onChange = {(e) => setMensagem(e.target.value)}
