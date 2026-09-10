@@ -7,14 +7,14 @@ type Props = {
 }
 
 const Card = ({filme} : Props) => {
-    const {id, title, imagem, description} = filme;
+    const {id, title, poster_path, overview} = filme;
     return(
         <div className={styles.card} key={id}>
             <Link href={`/filmes/${id}`}>
-                <img className={styles.card__poster} src={imagem} alt={`Poster do filme ${title}`} width={300} height={200} />
+                <img className={styles.card__poster} src={poster_path} alt={`Poster do filme ${title}`} width={300} height={200} />
                 <div className={styles.card__info}>
                     <h3 className={styles.card__title}> {title}</h3>
-                    <p className={styles.card__description}>{description}</p>
+                    <p className={styles.card__description}>{overview}</p>
                 </div>
             </Link>
         </div>
